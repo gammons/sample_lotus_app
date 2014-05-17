@@ -1,8 +1,3 @@
-##  Example Lotus application structure
+##  Sample Lotus application
 
-This is an example structure for a [lotus](https://github.com/lotus/lotus) web application.
-
-This skeleton was extracted from sidonath's [room reservation app](https://github.com/sidonath/room-reservation) which
-was the first known lotus application.  The only changes I made were to use minitest over rspec, and I also implemented
-the structure proposed by [Jodosha](https://github.com/jodosha) in the lotus.rb chat room.
-
+This app is going to be a port of the Rails application from the Rails Tutorial.  (https://github.com/railstutorial/sample_app_rails_4) It should clearly demonstrate the architectural differences between Lotus and Rails.
