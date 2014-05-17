@@ -5,7 +5,7 @@ require 'lotus/model'
 
 module FullStackPatch
   def response
-    [ super, self ].flatten
+    [super, self].flatten
   end
 
   def format
@@ -57,6 +57,7 @@ module Lotus
     end
 
     private
+
     def _call(env)
       env['HTTP_ACCEPT'] ||= 'text/html'
       @router.call(env)
@@ -75,6 +76,7 @@ module Lotus
     end
 
     private
+
     def render?(response)
       case response.first
       # 1xx have no body by definition
@@ -136,16 +138,16 @@ module Lotus
     end
 
     def assign_attributes
-      @collections.each do |name, collection|
+      @collections.each do |_, collection|
         collection.entity.attributes = collection.attributes.keys - Array(collection.identity)
       end
     end
 
     def assign_adapter
-      repositories = @collections.map { |name, collection|
+      repositories = @collections.map do |_, collection|
         repository_name = "#{collection.entity.name}#{Lotus::Model::Mapping::Collection::REPOSITORY_SUFFIX}"
         Object.const_get(repository_name)
-      }
+      end
 
       repositories.each do |repository|
         repository.adapter = @adapter

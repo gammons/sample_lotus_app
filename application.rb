@@ -6,7 +6,7 @@ require 'dotenv'
 
 Dotenv.load
 
-if ['development', 'test'].include? ENV.fetch('RACK_ENV')
+if %w(development test).include? ENV.fetch('RACK_ENV')
   Lotus::Controller.handle_exceptions = false
 end
 

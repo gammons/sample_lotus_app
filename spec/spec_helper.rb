@@ -1,4 +1,4 @@
-$:.unshift __dir__ + '/..'
+$LOAD_PATH.unshift __dir__ + '/..'
 ENV['RACK_ENV'] ||= 'test'
 require 'application'
 
@@ -8,8 +8,8 @@ require 'minitest/spec'
 require 'minitest/autorun'
 require 'lotus/model/adapters/memory_adapter'
 
-adapter = Application.setup_adapter do
-  name     :test
-  type     Lotus::Model::Adapters::MemoryAdapter
-  mapper   :default
+Application.setup_adapter do
+  name :test
+  type Lotus::Model::Adapters::MemoryAdapter
+  mapper :default
 end
