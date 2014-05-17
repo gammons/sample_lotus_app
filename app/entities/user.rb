@@ -1,4 +1,7 @@
 class User
   include Lotus::Entity
-  self.attributes = :email, :password, :name
+
+  def admin?
+    admin == true
+  end
 end
