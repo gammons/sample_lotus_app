@@ -11,10 +11,13 @@ gem 'sqlite3'
 gem 'dotenv'
 gem 'shotgun'
 gem 'pry'
-gem 'guard'
 gem 'bcrypt-ruby'
+gem 'reform'
 
 group :test do
+  gem 'pry'
   gem 'minitest'
   gem 'capybara'
+  gem 'guard'
+  gem 'guard-minitest'
 end
