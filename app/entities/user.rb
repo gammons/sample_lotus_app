@@ -17,8 +17,12 @@ class User
     @followers ||= []
   end
 
-  def followers=(_followers = [])
-    @followers = _followers
+  def followers=(f = [])
+    @followers = f
+  end
+
+  def microposts
+    @microposts ||= []
   end
 
   def generate_token

@@ -8,5 +8,11 @@ class RelationshipRepository
     relationship = Relationship.new(follower_id: user.id, followed_id: follower.id)
     persist(relationship)
   end
+
+  def self.followers_for(user)
+    query do
+      where(follower_id: user.id)
+    end.all
+  end
 end
 

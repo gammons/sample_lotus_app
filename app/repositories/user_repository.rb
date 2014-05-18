@@ -16,4 +16,8 @@ class UserRepository
       RelationshipRepository.persist_follower(user, follower)
     end
   end
+
+  def self.followers(user)
+    user.followers = RelationshipRepository.followers_for(user)
+  end
 end
