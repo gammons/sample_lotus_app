@@ -15,4 +15,15 @@ describe UserRepository do
     end
   end
 
+  describe "persisting followers" do
+    let(:user) { User.new(id: 1, name: 'bob') }
+
+    it "persists the followers" do
+      user.followers = [User.new(id: 2, name: 'jim')]
+      UserRepository.create(user)
+      relationship = RelationshipRepository.last
+      relationship.follower_id.must_equal 1
+      relationship.followed_id.must_equal 2
+    end
+  end
 end

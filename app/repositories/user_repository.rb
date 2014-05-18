@@ -7,14 +7,13 @@ class UserRepository
   def self.create(user)
     user.generate_token
     ret = super(user)
-    handle_followers(user)
+    persist_followers(user)
     ret
   end
 
-  def self.handle_followers(user)
-    return unless user.followers
-    Array(user.followers).each do |follower|
-      RelationshipRepository.persist(follower)
+  def self.persist_followers(user)
+    user.followers.each do |follower|
+      RelationshipRepository.persist_follower(user, follower)
     end
   end
 end
