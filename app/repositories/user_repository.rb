@@ -5,15 +5,10 @@ class UserRepository
   extend Timestamps
 
   def self.create(user)
-    user.remember_token = generate_token
+    user.generate_token
     ret = super(user)
     handle_followers(user)
     ret
-  end
-
-  def self.generate_token
-    token = SecureRandom.urlsafe_base64
-    Digest::SHA1.hexdigest(token.to_s)
   end
 
   def self.handle_followers(user)
