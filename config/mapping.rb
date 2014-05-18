@@ -21,4 +21,15 @@ Application.setup_mapper :default do
     attribute :remember_token, String
     attribute :admin, Boolean
   end
+
+  collection :relationships do
+    entity Relationship
+
+    attribute :id, String
+    attribute :follower_id, Integer
+    attribute :followed_id, Integer
+    attribute :created_at, DateTime
+    attribute :updated_at, DateTime
+
+  end
 end
