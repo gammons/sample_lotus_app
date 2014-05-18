@@ -4,12 +4,19 @@ require 'application'
 
 Bundler.require(:default, :test)
 
+require 'minitest/unit'
 require 'minitest/spec'
 require 'minitest/autorun'
 require 'lotus/model/adapters/memory_adapter'
 
-Application.setup_adapter do
+adapter = Application.setup_adapter do
   name :test
   type Lotus::Model::Adapters::MemoryAdapter
   mapper :default
+end
+
+Minitest::Spec.before do
+  Application.mapper(:default).collections.each do |collection|
+    adapter.clear collection.first
+  end
 end
