@@ -19,18 +19,4 @@ describe User do
     end
   end
 
-  describe "following" do
-    let(:another_user) { User.new }
-    it "follows another user" do
-      user.follow!(another_user)
-      user.followers.must_equal [another_user]
-    end
-
-    it "does not follow the same user twice" do
-      user.follow!(another_user)
-      user.follow!(another_user)
-      user.followers.must_equal [another_user]
-    end
-  end
-
 end
