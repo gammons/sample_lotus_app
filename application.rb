@@ -6,6 +6,8 @@ require 'dotenv'
 
 Dotenv.load
 
+I18n.enforce_available_locales = false
+
 if %w(development test).include? ENV.fetch('RACK_ENV')
   Lotus::Controller.handle_exceptions = false
 end
