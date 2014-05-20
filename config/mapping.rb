@@ -1,4 +1,4 @@
-Application.setup_mapper :default do
+SampleApp.setup_mapper :default do
   collection :microposts do
     entity Micropost
 

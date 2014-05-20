@@ -22,7 +22,7 @@ Dir.glob(ApplicationRoot.join('app/*/*.rb')) { |file| require file }
 Lotus::View.root = ApplicationRoot.join('app/templates')
 Lotus::View.load!
 
-Application = Lotus::Application.new
+SampleApp = Lotus::Application.new
 
 require_relative 'config/routes'
 Dir.glob(ApplicationRoot.join('config/**/*.rb')) { |file| require file }

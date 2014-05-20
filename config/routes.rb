@@ -1,7 +1,4 @@
-Application.setup_router do
-  get '/', to: 'home#index', as: :root
+SampleApp.setup_router do
+  get '/', to: 'static_pages#index', as: :root
 
-  resource :account, only: [:new, :create]
-  resources :rooms
-  resources :teams
 end

@@ -11,14 +11,14 @@ Minitest::Reporters.use!
 
 require 'lotus/model/adapters/memory_adapter'
 
-adapter = Application.setup_adapter do
+adapter = SampleApp.setup_adapter do
   name :test
   type Lotus::Model::Adapters::MemoryAdapter
   mapper :default
 end
 
 Minitest::Spec.before do
-  Application.mapper(:default).collections.each do |collection|
+  SampleApp.mapper(:default).collections.each do |collection|
     adapter.clear collection.first
   end
 end
