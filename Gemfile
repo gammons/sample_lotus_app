@@ -17,6 +17,7 @@ gem 'reform'
 group :test do
   gem 'pry'
   gem 'minitest'
+  gem 'minitest-reporters'
   gem 'capybara'
   gem 'guard'
   gem 'guard-minitest'

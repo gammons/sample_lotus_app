@@ -6,6 +6,9 @@ Bundler.require(:default, :test)
 
 require 'minitest/spec'
 require 'minitest/autorun'
+require "minitest/reporters"
+Minitest::Reporters.use!
+
 require 'lotus/model/adapters/memory_adapter'
 
 adapter = Application.setup_adapter do
