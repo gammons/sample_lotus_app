@@ -6,7 +6,6 @@ class UserRepository
 
   def self.create(user)
     user.generate_token
-    ret = super(user)
-    ret
+    super(user)
   end
 end
