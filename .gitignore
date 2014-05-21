@@ -9,6 +9,8 @@
 /log/*.log
 /tmp
 
+/public/assets
+
 # Ignore other unneeded files.
 database.yml
 doc/
