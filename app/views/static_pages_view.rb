@@ -7,12 +7,8 @@ module StaticPages
       false
     end
 
-    def link_to(*args)
-      p "here"
+    def sign_up_now_link
+      %Q(<a class="btn btn-large btn-primary" href="#{SampleApp.router.path(:signup)}">Sign up now!</a>)
     end
-
-    # def link_to(name, url, options = {})
-    #   "<a href=#{url}>#{name}</a>"
-    # end
   end
 end

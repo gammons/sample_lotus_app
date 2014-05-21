@@ -2,18 +2,18 @@
   <div class="row">
     <aside class="span4">
       <section>
-        <%= render 'shared/user_info' %>
+        <%= render partial: 'shared/user_info' %>
       </section>
       <section>
-        <%= render 'shared/stats' %>
+        <%= render partial: 'shared/stats' %>
       </section>
       <section>
-        <%= render 'shared/micropost_form' %>
+        <%= render partial: 'shared/micropost_form' %>
       </section>
     </aside>
     <div class="span8">
       <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
+      <%= render partial: 'shared/feed' %>
     </div>
   </div>
 <% else %>
@@ -22,13 +22,10 @@
 
     <h2>
       This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+      <a href="http://lotustutorial.org/">Lotus Tutorial</a>
       sample application.
     </h2>
 
-    <%#= link_to "Sign up now!", SampleApp.router.path(:signup),
-                                class: "btn btn-large btn-primary" %>
+    <%= sign_up_now_link %>
   </div>
-
-  <%#= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %>
