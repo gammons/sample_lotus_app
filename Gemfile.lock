@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/gammons/view.git
+  revision: a364630ca2f93811907d0baeac0d067c19fe4259
+  specs:
+    lotus-view (0.1.0)
+      lotus-utils (~> 0.1)
+      tilt (~> 2.0, >= 2.0.1)
+
+GIT
   remote: git://github.com/lotus/controller.git
   revision: 8d3955760448c2b225a3189426c0d3eb274a6e04
   specs:
@@ -19,6 +27,13 @@ GIT
   revision: a2a19e9a610c1060d010369a5f5adeb3b1e10e0a
   specs:
     lotus-utils (0.1.1)
+
+GIT
+  remote: git://github.com/sstephenson/sprockets.git
+  revision: c22a41339d376ef5407d3ce353af62676822750c
+  specs:
+    sprockets (2.12.1)
+      rack (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -72,9 +87,6 @@ GEM
     lotus-router (0.1.0)
       http_router (~> 0)
       lotus-utils (~> 0)
-    lotus-view (0.1.0)
-      lotus-utils (~> 0.1)
-      tilt (~> 2.0, >= 2.0.1)
     lumberjack (1.0.5)
     method_source (0.8.2)
     mime-types (2.2)
@@ -95,7 +107,6 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.3.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.4)
       ffi (>= 0.5.0)
@@ -106,6 +117,7 @@ GEM
       multi_json
       nokogiri
     ruby-progressbar (1.5.1)
+    sass (3.3.3)
     sequel (4.10.0)
     shotgun (0.9)
       rack (>= 1.0)
@@ -135,11 +147,12 @@ DEPENDENCIES
   lotus-model!
   lotus-router
   lotus-utils!
-  lotus-view
+  lotus-view!
   minitest
   minitest-reporters
   pry
-  rake
   reform
+  sass
   shotgun
+  sprockets!
   sqlite3
