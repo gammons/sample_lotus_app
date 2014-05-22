@@ -13,5 +13,6 @@ class ApplicationLayout
   def page_title
     "Main"
   end
+
 end
 
